@@ -6,3 +6,9 @@
 //
 // File Name : closed.c
 //---------------------------------------------------------
+
+
+#define processing_h
+#infdef processing_h
+
+#endif

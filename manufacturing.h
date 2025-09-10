@@ -6,3 +6,9 @@
 //
 // File Name : closed.c
 //---------------------------------------------------------
+
+#define manufacturing_h
+#infdef manufacturing_h
+
+
+#endif

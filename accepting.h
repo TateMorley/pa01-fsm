@@ -6,3 +6,8 @@
 //
 // File Name : closed.c
 //---------------------------------------------------------
+
+#define accepting_h
+#infdef accepting_h
+
+#endif

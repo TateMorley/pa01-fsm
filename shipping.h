@@ -6,3 +6,9 @@
 //
 // File Name : closed.c
 //---------------------------------------------------------
+
+#define shipping_h
+#infdef shipping _h
+
+
+#endif
