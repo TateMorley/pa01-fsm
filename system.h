@@ -1,4 +1,5 @@
-#define system.h
+#ifndef system_h
+#define system_h
 
 
 
