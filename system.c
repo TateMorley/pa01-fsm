@@ -1,8 +1,28 @@
 //---------------------------------------------------------
 // Assignment : Lab-02 Opening Source
 // Date : 9/10/25
-// 
+//
 // Author : FSM-PA_Team01
 //
 // File Name : closed.c
 //---------------------------------------------------------
+
+#include "system.h"
+#include <stdio.h>
+
+void set_status(status_option status)
+{
+    printf("Updating staistics for ");
+    if (status == FAILED)
+    {
+        print("FAILED manufacturing\n");
+    }
+    else if (status == DONE)
+    {
+        printf("SUCCESSFUL orders\n");
+    }
+    else if (status == LOST)
+    {
+        printf("LOST packages\n");
+    }
+}
