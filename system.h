@@ -17,6 +17,20 @@ typedef enum
     DONE
 } status_option;
 
-void set_status(status_option status);
+// Events
+typedef enum
+{
+    ORDER_RECIEVED,
+    INVALID_PAYMENT,
+    VALID_PAYMENT,
+    MANUFACTURE_FAILED,
+    MANUFACTURE_COMPLETED,
+    SHIPMENT_LOST,
+    SHIPMENT_ARRIVED
+} event;
+#define INVALID_EVENT -1
+
+void updateStats(status_option status);
+
 
 #endif

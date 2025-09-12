@@ -12,7 +12,7 @@
 
 #include "state.h"
 
-static state_t* getOrderSize();
+static int getOrderSize();
 static state_t* resetAttempts();
 
 

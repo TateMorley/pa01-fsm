@@ -7,8 +7,15 @@
 // File Name : closed.c
 //---------------------------------------------------------
 
+#ifndef shipping_h
 #define shipping_h
-#infdef shipping _h
 
+#include "state.h"
+
+static void updateStats();
+static state_t* refund();
+static state_t* startWarranty();
+
+static void entryToShipping();
 
 #endif

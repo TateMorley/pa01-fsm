@@ -9,7 +9,7 @@
 
 #include "system.h"
 #include "processing.h"
-#include "state.h"
+#include "statemodel.h"
 
 extern state_t *  default_event_handler();
 extern void       default_action();
@@ -29,15 +29,20 @@ state_t processing = {
 
 state_t* increaseAttempts()
 {
-    // implement
+    return &processing;
 }
 
 state_t* paymentRejected()
 {
-    // implement
+    return &accepting;
 }
 
 void entryToProcessing()
 {
-    // implement
+    getPymntMethod();
+}
+
+void getPymntMethod()
+{
+    // Implement this
 }

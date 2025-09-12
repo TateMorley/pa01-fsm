@@ -7,8 +7,15 @@
 // File Name : closed.c
 //---------------------------------------------------------
 
+#ifndef manufacturing_h
 #define manufacturing_h
-#infdef manufacturing_h
 
+#include "state.h"
+
+static void updateStats();
+static state_t* chargeClient();
+
+static void entryToManufacturing();
+static void exitFromManufacturing();
 
 #endif

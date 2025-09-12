@@ -10,7 +10,7 @@
 #include "system.h"
 #include <stdio.h>
 
-void set_status(status_option status)
+void updateStats(status_option status)
 {
     printf("Updating staistics for ");
     if (status == FAILED)

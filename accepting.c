@@ -7,7 +7,7 @@
 // File Name : closed.c
 //---------------------------------------------------------
 
-#include "state.h"
+#include "statemodel.h"
 #include "system.h"
 #include "accepting.h"
 
@@ -17,7 +17,7 @@ extern void       default_action();
 
 state_t accepting = {
     getOrderSize,           //getOrderSize;
-    resetAttempts,  //resetAttempts;
+    resetAttempts,          //resetAttempts;
     default_event_handler,  //increaseAttempts;
     default_event_handler,  //paymentRejected;
     default_event_handler,  //updateStats;
@@ -28,12 +28,12 @@ state_t accepting = {
     default_action          //exit_from;
 };
 
-state_t* getOrderSize()
+int getOrderSize()
 {
-    // Implement this
+    return &processing;
 }
 
 state_t* resetAttempts()
 {
-    // Implement this
+    return &processing;
 }

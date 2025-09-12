@@ -21,7 +21,7 @@ struct state {
   event_handler*  resetAttempts;
   event_handler*  increaseAttempts;
   event_handler*  paymentRejected;
-  event_handler*  updateStatus;
+  event_handler*  updateStats;
   event_handler*  chargeClient;
   event_handler*  startWarranty;
   event_handler*  refund;
