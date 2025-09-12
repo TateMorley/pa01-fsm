@@ -29,6 +29,7 @@ state_t processing = {
 
 state_t* increaseAttempts()
 {
+    attempts++;
     return &processing;
 }
 

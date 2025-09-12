@@ -30,10 +30,11 @@ state_t accepting = {
 
 int getOrderSize()
 {
-    return &processing;
+    // Implement this
 }
 
 state_t* resetAttempts()
 {
+    attempts = 0;
     return &processing;
 }

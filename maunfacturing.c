@@ -29,6 +29,7 @@ state_t manufacturing = {
 
 state_t* chargeClient()
 {
+    // Implement this
     return &shipping;
 }
 

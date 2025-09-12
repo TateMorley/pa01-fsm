@@ -9,6 +9,7 @@ extern state_t accepting;
 extern state_t processing;
 extern state_t manufacturing;
 extern state_t shipping;
+extern int attempts;
 
 void printStateName(void);
 void handleEvent(event current_event);

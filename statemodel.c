@@ -4,6 +4,7 @@
 #include "statemodel.h"
 
 extern state_t* currentState;
+attempts = 0;
 
 void handleEvent(event currentEvent)
 {
@@ -16,7 +17,15 @@ void handleEvent(event currentEvent)
             next_state = currentState -> resetAttempts();
             break;
         case INVALID_PAYMENT:
-            next_state = currentState -> increaseAttempts();
+            if (attempts < 3)
+            {
+                next_state = currentState -> increaseAttempts();
+            }
+            else if (attempts >= 3)
+            {
+                next_state = currentState -> paymentRejected();
+            }
+            
             break;
         case VALID_PAYMENT:
             next_state = &manufacturing;
