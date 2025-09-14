@@ -19,7 +19,7 @@ state_t shipping = {
     default_event_handler,  //resetAttempts;
     default_event_handler,  //increaseAttempts;
     default_event_handler,  //paymentRejected;
-    updateStats,           //updateStats;
+    default_event_handler,  //updateStats;
     default_event_handler,  //chargeClient;
     startWarranty,          //startWarranty;
     refund,                 //refund;

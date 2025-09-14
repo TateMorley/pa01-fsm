@@ -28,9 +28,9 @@ state_t accepting = {
     default_action          //exit_from;
 };
 
-int getOrderSize()
+state_t* getOrderSize()
 {
-    // Implement this
+    return &processing;
 }
 
 state_t* resetAttempts()

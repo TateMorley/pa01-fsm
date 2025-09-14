@@ -12,10 +12,9 @@
 
 #include "state.h"
 
-static void updateStats();
-static state_t* refund();
-static state_t* startWarranty();
+state_t* refund();
+state_t* startWarranty();
 
-static void entryToShipping();
+void entryToShipping();
 
 #endif

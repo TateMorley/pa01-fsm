@@ -12,8 +12,8 @@
 
 #include "state.h"
 
-static int getOrderSize();
-static state_t* resetAttempts();
+state_t* getOrderSize();
+state_t* resetAttempts();
 
 
 #endif

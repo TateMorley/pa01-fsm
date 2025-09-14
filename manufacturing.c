@@ -12,7 +12,7 @@
 #include "manufacturing.h"
 
 extern state_t* default_event_handler();
-extern void     default_action();
+extern state_t*   default_action();
 
 state_t manufacturing = {
     default_event_handler,

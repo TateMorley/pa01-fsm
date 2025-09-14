@@ -12,10 +12,9 @@
 
 #include "state.h"
 
-static void updateStats();
-static state_t* chargeClient();
+state_t* chargeClient();
 
-static void entryToManufacturing();
-static void exitFromManufacturing();
+void entryToManufacturing();
+void exitFromManufacturing();
 
 #endif

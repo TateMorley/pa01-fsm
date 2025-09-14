@@ -1,5 +1,5 @@
-driver: driver.o accepting.o maunfacturing.o processing.o shipping.o state.o system.o
-	gcc accepting.o maunfacturing.o processing.o shipping.o state.o system.o -o driver
+driver: driver.o accepting.o manufacturing.o processing.o shipping.o state.o system.o statemodel.o
+	gcc driver.o accepting.o manufacturing.o processing.o shipping.o state.o system.o statemodel.o -o driver
 
 driver.o: driver.c
 	gcc -c driver.c 
@@ -7,8 +7,8 @@ driver.o: driver.c
 accepting.o: accepting.c accepting.h
 	gcc -c accepting.c -o accepting.o
 
-maunfacturing.o: maunfacturing.c manufacturing.h
-	gcc -c maunfacturing.c -o maunfacturing.o
+manufacturing.o: manufacturing.c manufacturing.h
+	gcc -c manufacturing.c -o manufacturing.o
 
 processing.o: processing.c processing.h
 	gcc -c processing.c -o processing.o
@@ -22,6 +22,9 @@ state.o: state.c state.h
 system.o: system.c system.h
 	gcc -c system.c -o system.o
 
+statemodel.o: statemodel.c statemodel.h
+	gcc -c statemodel.c -o statemodel.o
+
 clean:
-	rm *.o 
+	rm -f *.o driver
 
