@@ -17,7 +17,7 @@ typedef state_t* event_handler(void);
 typedef void action(void);
 
 struct state {
-  event_handler*  getOrderSize;
+  action*         getOrderSize;
   event_handler*  resetAttempts;
   event_handler*  increaseAttempts;
   event_handler*  paymentRejected;

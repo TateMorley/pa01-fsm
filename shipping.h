@@ -17,4 +17,6 @@ state_t* startWarranty();
 
 void entryToShipping();
 
+void getAddress();
+
 #endif

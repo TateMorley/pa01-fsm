@@ -10,12 +10,14 @@
 #include "statemodel.h"
 #include "system.h"
 #include "shipping.h"
+#include <stdio.h>
 
 extern state_t *  default_event_handler();
 extern void       default_action();
+extern state_t accepting;
 
 state_t shipping = {
-    default_event_handler,  //getOrderSize;
+    default_action,         //getOrderSize;
     default_event_handler,  //resetAttempts;
     default_event_handler,  //increaseAttempts;
     default_event_handler,  //paymentRejected;
@@ -46,5 +48,5 @@ void entryToShipping()
 
 void getAddress()
 {
-    // Implement this
+    puts("Getting shipping address");
 }

@@ -20,7 +20,7 @@ typedef enum
 // Events
 typedef enum
 {
-    ORDER_RECIEVED,
+    ORDER_RECEIVED,
     INVALID_PAYMENT,
     VALID_PAYMENT,
     MANUFACTURE_FAILED,

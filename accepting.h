@@ -12,7 +12,7 @@
 
 #include "state.h"
 
-state_t* getOrderSize();
+void getOrderSize();
 state_t* resetAttempts();
 
 

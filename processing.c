@@ -10,12 +10,15 @@
 #include "system.h"
 #include "processing.h"
 #include "statemodel.h"
+#include <stdio.h>
 
+extern state_t accepting;
+extern state_t manufacturing;
 extern state_t *  default_event_handler();
 extern void       default_action();
 
 state_t processing = {
-    default_event_handler,  //getOrderSize;
+    default_action,         //getOrderSize;
     default_event_handler,  //resetAttempts;
     increaseAttempts,       //increaseAttempts;
     paymentRejected,        //paymentRejected;
@@ -45,5 +48,5 @@ void entryToProcessing()
 
 void getPymntMethod()
 {
-    // Implement this
+    puts("Getting payment method");
 }

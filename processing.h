@@ -16,5 +16,6 @@ static state_t* increaseAttempts();
 static state_t* paymentRejected();
 
 static void entryToProcessing();
+static void getPymntMethod();
 
 #endif

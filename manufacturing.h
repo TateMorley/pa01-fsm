@@ -17,4 +17,7 @@ state_t* chargeClient();
 void entryToManufacturing();
 void exitFromManufacturing();
 
+void dispatchFactoryLines();
+void shutDownFactoryLines();
+
 #endif

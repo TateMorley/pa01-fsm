@@ -12,7 +12,7 @@ int main(void)
   printStateName();
   currentState->entry_to();
   
-  while (key != getchar() != 'x')
+  while ((key = getchar()) != 'X')
   {
     if (key == '\n')
       continue;
@@ -20,8 +20,8 @@ int main(void)
     switch (key)
     {
     case 'O':
-      currentEvent = ORDER_RECIEVED;
-      puts("Event: ORDER_RECIEVED\n");
+      currentEvent = ORDER_RECEIVED;
+      puts("Event: ORDER_RECEIVED\n");
       break;
     case 'I':
       currentEvent = INVALID_PAYMENT;
@@ -57,5 +57,5 @@ int main(void)
     }
   }
   printf("\n");
-  fflush(stdout);
+  return 0;
 }
