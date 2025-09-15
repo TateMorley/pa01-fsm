@@ -23,6 +23,7 @@ void shutDownFactoryLines();
 state_t manufacturing = {
     default_action,         // getOrderSize
     default_event_handler,  // resetAttempts
+    default_event_handler,  // validPayment
     default_event_handler,  // increaseAttempts
     default_event_handler,  // paymentRejected
     default_event_handler,  // updateStats
@@ -60,14 +61,14 @@ void entryToManufacturing()
 void exitFromManufacturing()
 {
   shutDownFactoryLines();
+  puts("Shutting Down Factory Lines");
 }
 
 void dispatchFactoryLines()
 {
-  puts("Dispatching factory lines");
+  puts("Dispatching Factory Lines");
 }
 
 void shutDownFactoryLines()
 {
-  puts("Shutting down factory lines");
 }

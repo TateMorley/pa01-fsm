@@ -12,7 +12,7 @@
 
 void updateStats(status_option status)
 {
-    printf("Updating statistics for ");
+    printf("Updating Statistics for ");
     if (status == FAILED)
     {
         printf("FAILED manufacturing\n");

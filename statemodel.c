@@ -9,6 +9,7 @@ int attempts = 0;
 void handleEvent(event currentEvent)
 {
   state_t *next_state;
+  event event_copy = currentEvent;
 
   next_state = NULL;
   switch (currentEvent)
@@ -17,21 +18,12 @@ void handleEvent(event currentEvent)
     next_state = currentState->resetAttempts();
     break;
   case INVALID_PAYMENT:
-    if (attempts < 3)
-    {
-      next_state = currentState->increaseAttempts();
-    }
-    else if (attempts >= 3)
-    {
-      next_state = currentState->paymentRejected();
-    }
-
+    next_state = currentState->increaseAttempts();
     break;
   case VALID_PAYMENT:
-    next_state = &manufacturing;
+    next_state = currentState->validPayment();
     break;
   case MANUFACTURE_FAILED:
-    updateStats(FAILED);
     next_state = &accepting;
     break;
   case MANUFACTURE_COMPLETED:
@@ -47,6 +39,18 @@ void handleEvent(event currentEvent)
 
   if (next_state != NULL)
   {
+    if (next_state != currentState)
+    {
+      currentState->exit_from();
+    }
+    if (event_copy == MANUFACTURE_FAILED)
+    {
+      updateStats(FAILED);
+    }
+    if (event_copy == MANUFACTURE_COMPLETED)
+    {
+      puts("Client has been charged");
+    }
     currentState = next_state;
     printStateName();
     currentState->entry_to();
@@ -55,7 +59,7 @@ void handleEvent(event currentEvent)
 
 void printStateName(void)
 {
-  printf("\n*-*-*-*-*-*-*-*-*-*-*-*\n State: ");
+  printf("\n*-*-*-*-*-*-*-*-*-*-*-*\nState: ");
   if (currentState == &accepting)
     printf("ACCEPTING");
   else if (currentState == &processing)

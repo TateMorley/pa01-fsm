@@ -19,6 +19,7 @@ typedef void action(void);
 struct state {
   action*         getOrderSize;
   event_handler*  resetAttempts;
+  event_handler*  validPayment;
   event_handler*  increaseAttempts;
   event_handler*  paymentRejected;
   event_handler*  updateStats;

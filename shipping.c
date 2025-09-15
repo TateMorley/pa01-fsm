@@ -19,6 +19,7 @@ extern state_t accepting;
 state_t shipping = {
     default_action,         //getOrderSize;
     default_event_handler,  //resetAttempts;
+    default_event_handler,  //validPayment;
     default_event_handler,  //increaseAttempts;
     default_event_handler,  //paymentRejected;
     default_event_handler,  //updateStats;
@@ -31,12 +32,14 @@ state_t shipping = {
 
 state_t* refund()
 {
+    puts("Refund Issued");
     updateStats(LOST);
     return &accepting;
 }
 
 state_t* startWarranty()
 {
+    puts("Warranty has started");
     updateStats(DONE);
     return &accepting;
 }
@@ -48,5 +51,5 @@ void entryToShipping()
 
 void getAddress()
 {
-    puts("Getting shipping address");
+    puts("Getting Ship-To Address");
 }

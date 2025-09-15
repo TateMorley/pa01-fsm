@@ -10,7 +10,6 @@ int main(void)
   event currentEvent;
   int key;
   printStateName();
-  currentState->entry_to();
   
   while ((key = getchar()) != 'X')
   {
@@ -21,31 +20,31 @@ int main(void)
     {
     case 'O':
       currentEvent = ORDER_RECEIVED;
-      puts("Event: ORDER_RECEIVED\n");
+      puts("Event: ORDER_RECEIVED");
       break;
     case 'I':
       currentEvent = INVALID_PAYMENT;
-      puts("Event: INVALID_PAYMENT\n");
+      puts("Event: INVALID_PAYMENT");
       break;
     case 'V':
       currentEvent = VALID_PAYMENT;
-      puts("Event: VALID_PAYMENT\n");
+      puts("Event: VALID_PAYMENT");
       break;
     case 'F':
       currentEvent = MANUFACTURE_FAILED;
-      puts("Event: MANUFACTURE_FAILED\n");
+      puts("Event: MANUFACTURE_FAILED");
       break;
     case 'C':
       currentEvent = MANUFACTURE_COMPLETED;
-      puts("Event: MANUFACTURE_COMPLETED\n");
+      puts("Event: MANUFACTURE_COMPLETED");
       break;
     case 'L':
       currentEvent = SHIPMENT_LOST;
-      puts("Event: SHIPMENT_LOST\n");
+      puts("Event: SHIPMENT_LOST");
       break;
     case 'R':
       currentEvent = SHIPMENT_ARRIVED;
-      puts("Event: SHIPMENT_ARRIVED\n");
+      puts("Event: SHIPMENT_ARRIVED");
       break;
     default:
       puts("Invalid Event\n");

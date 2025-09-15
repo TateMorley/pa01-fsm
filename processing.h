@@ -12,6 +12,7 @@
 
 #include "state.h"
 
+static state_t* validPayment();
 static state_t* increaseAttempts();
 static state_t* paymentRejected();
 

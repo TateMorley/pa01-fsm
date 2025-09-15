@@ -20,6 +20,7 @@ extern void       default_action();
 state_t processing = {
     default_action,         //getOrderSize;
     default_event_handler,  //resetAttempts;
+    validPayment,           //validPayment;
     increaseAttempts,       //increaseAttempts;
     paymentRejected,        //paymentRejected;
     default_event_handler,  //updateStats;
@@ -33,13 +34,27 @@ state_t processing = {
 state_t* increaseAttempts()
 {
     attempts++;
-    return &processing;
+    printf("Invalid Payment-Attempts Incremented to %d\n", attempts);
+    if (attempts >= 3) {
+        puts("Payment Rejected");
+        return &accepting;
+    } else {
+        return &processing;
+    }
+}
+
+state_t* validPayment()
+{
+    return &manufacturing;
 }
 
 state_t* paymentRejected()
 {
+    puts("Payment Rejected");
     return &accepting;
 }
+
+
 
 void entryToProcessing()
 {
@@ -48,5 +63,5 @@ void entryToProcessing()
 
 void getPymntMethod()
 {
-    puts("Getting payment method");
+    puts("Getting Payment Method");
 }
