@@ -4,7 +4,7 @@
 //
 // Author : FSM-PA_Team01
 //
-// File Name : closed.c
+// File Name : manufacturing.c
 //---------------------------------------------------------
 
 #include "statemodel.h"
@@ -21,35 +21,33 @@ void dispatchFactoryLines();
 void shutDownFactoryLines();
 
 state_t manufacturing = {
-    default_action,         // getOrderSize
-    default_event_handler,  // resetAttempts
-    default_event_handler,  // validPayment
-    default_event_handler,  // increaseAttempts
-    default_event_handler,  // paymentRejected
-    default_event_handler,  // updateStats
-    chargeClient,           // chargeClient
-    default_event_handler,  // startWarranty
-    default_event_handler,  // refund
+    default_action,           // getOrderSize
+    default_event_handler,    // resetAttempts
+    default_event_handler,    // validPayment
+    default_event_handler,    // increaseAttempts
+    manufactureFailedHandler, // paymentRejected
+    default_event_handler,    // updateStats
+    chargeClient,             // chargeClient
+    default_event_handler,    // startWarranty
+    default_event_handler,    // refund
     entryToManufacturing,
     exitFromManufacturing
 };
 
-state_t *chargeClient()
+state_t* chargeClient()
 {
   return &shipping;
 }
 
-state_t *manufactureCompletedHandler()
+state_t* manufactureCompletedHandler()
 {
   puts("Manufacturing Completed");
   updateStats(DONE);
   return &shipping;
 }
 
-state_t *manufactureFailedHandler()
+state_t* manufactureFailedHandler()
 {
-  puts("Manufacturing Failed");
-  updateStats(FAILED);
   return &accepting;
 }
 

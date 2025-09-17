@@ -1,3 +1,12 @@
+//---------------------------------------------------------
+// Assignment : Lab-02 Opening Source
+// Date : 9/10/25
+//
+// Author : FSM-PA_Team01
+//
+// File Name : statemodel.c
+//---------------------------------------------------------
+
 #include <stdlib.h>
 #include <stdio.h>
 
@@ -15,6 +24,7 @@ void handleEvent(event currentEvent)
   switch (currentEvent)
   {
   case ORDER_RECEIVED:
+    currentState->getOrderSize();
     next_state = currentState->resetAttempts();
     break;
   case INVALID_PAYMENT:
@@ -24,7 +34,7 @@ void handleEvent(event currentEvent)
     next_state = currentState->validPayment();
     break;
   case MANUFACTURE_FAILED:
-    next_state = &accepting;
+    next_state = currentState->paymentRejected();
     break;
   case MANUFACTURE_COMPLETED:
     next_state = currentState->chargeClient();
@@ -43,6 +53,7 @@ void handleEvent(event currentEvent)
     {
       currentState->exit_from();
     }
+
     if (event_copy == MANUFACTURE_FAILED)
     {
       updateStats(FAILED);
@@ -51,6 +62,7 @@ void handleEvent(event currentEvent)
     {
       puts("Client has been charged");
     }
+
     currentState = next_state;
     printStateName();
     currentState->entry_to();
@@ -61,12 +73,14 @@ void printStateName(void)
 {
   printf("\n*-*-*-*-*-*-*-*-*-*-*-*\nState: ");
   if (currentState == &accepting)
+  {
     printf("ACCEPTING");
-  else if (currentState == &processing)
+  } else if (currentState == &processing) {
     printf("PROCESSING");
-  else if (currentState == &manufacturing)
+  } else if (currentState == &manufacturing) {
     printf("MANUFACTURING");
-  else if (currentState == &shipping)
+  } else if (currentState == &shipping) {
     printf("SHIPPING");
+  }
   printf("\n*-*-*-*-*-*-*-*-*-*-*-*\n");
 }

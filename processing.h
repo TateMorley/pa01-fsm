@@ -4,7 +4,7 @@
 //
 // Author : FSM-PA_Team01
 //
-// File Name : closed.c
+// File Name : processing.h
 //---------------------------------------------------------
 
 #ifndef processing_h
@@ -12,11 +12,11 @@
 
 #include "state.h"
 
-static state_t* validPayment();
-static state_t* increaseAttempts();
-static state_t* paymentRejected();
+state_t* validPayment();
+state_t* increaseAttempts();
+state_t* paymentRejected();
 
-static void entryToProcessing();
-static void getPymntMethod();
+void entryToProcessing();
+void getPymntMethod();
 
 #endif

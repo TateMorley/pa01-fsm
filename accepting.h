@@ -4,7 +4,7 @@
 //
 // Author : FSM-PA_Team01
 //
-// File Name : closed.c
+// File Name : accepting.h
 //---------------------------------------------------------
 
 #ifndef accepting_h
@@ -14,6 +14,5 @@
 
 void getOrderSize();
 state_t* resetAttempts();
-
 
 #endif

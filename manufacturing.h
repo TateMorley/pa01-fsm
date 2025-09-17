@@ -1,10 +1,10 @@
 //---------------------------------------------------------
 // Assignment : Lab-02 Opening Source
 // Date : 9/10/25
-// 
+//
 // Author : FSM-PA_Team01
 //
-// File Name : closed.c
+// File Name : manufacturing.h
 //---------------------------------------------------------
 
 #ifndef manufacturing_h
@@ -13,10 +13,11 @@
 #include "state.h"
 
 state_t* chargeClient();
+state_t* manufactureCompletedHandler();
+state_t* manufactureFailedHandler();
 
 void entryToManufacturing();
 void exitFromManufacturing();
-
 void dispatchFactoryLines();
 void shutDownFactoryLines();
 

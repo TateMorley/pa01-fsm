@@ -1,3 +1,12 @@
+//---------------------------------------------------------
+// Assignment : Lab-02 Opening Source
+// Date : 9/10/25
+//
+// Author : FSM-PA_Team01
+//
+// File Name : statemodel.h
+//---------------------------------------------------------
+
 #ifndef statemodel_h
 #define statemodel_h
 
@@ -11,7 +20,7 @@ extern state_t manufacturing;
 extern state_t shipping;
 extern int attempts;
 
-void printStateName(void);
 void handleEvent(event current_event);
+void printStateName(void);
 
 #endif

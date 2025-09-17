@@ -4,7 +4,7 @@
 //
 // Author : FSM-PA_Team01
 //
-// File Name : closed.c
+// File Name : processing.c
 //---------------------------------------------------------
 
 #include "system.h"
@@ -35,7 +35,8 @@ state_t* increaseAttempts()
 {
     attempts++;
     printf("Invalid Payment-Attempts Incremented to %d\n", attempts);
-    if (attempts >= 3) {
+    if (attempts >= 3)
+    {
         puts("Payment Rejected");
         return &accepting;
     } else {
@@ -53,8 +54,6 @@ state_t* paymentRejected()
     puts("Payment Rejected");
     return &accepting;
 }
-
-
 
 void entryToProcessing()
 {

@@ -4,7 +4,7 @@
 //
 // Author : FSM-PA_Team01
 //
-// File Name : closed.c
+// File Name : accepting.c
 //---------------------------------------------------------
 
 #include "statemodel.h"
@@ -17,7 +17,6 @@ extern void default_action();
 extern int attempts;
 
 state_t accepting = {
-
     getOrderSize,           // getOrderSize;
     resetAttempts,          // resetAttempts;
     default_event_handler,  // validPayment;
@@ -34,14 +33,12 @@ state_t accepting = {
 void getOrderSize()
 {
   puts("Got an order of size = 0 items");
-
 }
 
 state_t* resetAttempts()
 {
-  puts("Got an order of size = 0 items");
+  // puts("Got an order of size = 0 items");
   attempts = 0;
   puts("Invalid Payment-Attempts Reset to 0");
   return &processing;
 }
-

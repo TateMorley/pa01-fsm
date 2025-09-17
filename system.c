@@ -4,7 +4,7 @@
 //
 // Author : FSM-PA_Team01
 //
-// File Name : closed.c
+// File Name : system.c
 //---------------------------------------------------------
 
 #include "system.h"
